@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<div class="col">
+    <div class="card">
+        <div style="display: inline-block;" class="">
+            {%  if object.photo %}
+                <img style="width: 380px; height: 480px;" class="card-img-top img-thumbnail" src="{{ object.photo.url }}" alt="{{ object.title }}">
+            {% endif %}
+            <span style="display: inline-block;"><h1>{{object.title}}</h1></span>
+            <span style="display: inline-block;"><p>{{object.text}}</p></span>
+        </div>
+        <a href="{% url 'it' %}">Barcha postlar </a>
+
+    </div>
+</div>
+
+{% endblock content %}

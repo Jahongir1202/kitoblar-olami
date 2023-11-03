@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+
+            <div style="margin:0 50px;" class="row row-cols-2 row-cols-md-4 g-4 ">
+                {% for post in object_list %}
+                    <div class="col">
+                        <div class="card">
+                            <img style="width: 100%; height: 380px;" src="{{ post.photo.url }}" alt="{{ post.photo }}" class="card-img-top img-thumbnail" >
+                            <div class="card-body">
+                                <h5 class="card-title">{{post.title}}</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="font-weight-bold"><a href="{% url 'pagesjahon_detail' post.pk  %}"><p>batafsil ...</p></a></div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    {%endblock content%}
+</body>
+</html>
